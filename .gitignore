@@ -1,0 +1,4 @@
+vpn/
+venv/
+.vscode/
+*.pdf
