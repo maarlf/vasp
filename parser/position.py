@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """position.py
 This scripts will atoms position from OUTCAR file from VASP calculation.
 
