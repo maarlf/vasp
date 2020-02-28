@@ -21,6 +21,7 @@ Output that we need:
 0.583
 0.577
 0.677
+3.108
 """
 import sys
 
@@ -36,6 +37,9 @@ with open(outcar, 'r') as f:
             f.next()
         if read:
             if line == separator:
+                continue
+            if line.startswith('tot'):
+                tots.append(line.split())
                 read = False
                 break
             else:
