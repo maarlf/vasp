@@ -2,6 +2,7 @@ appnope==0.1.0
 asn1crypto==0.24.0
 attrs==19.3.0
 backports-abc==0.5
+backports.functools-lru-cache==1.6.1
 backports.shutil-get-terminal-size==1.0.0
 bleach==3.1.1
 certifi==2019.6.16
@@ -10,6 +11,7 @@ chardet==3.0.4
 configparser==4.0.2
 contextlib2==0.6.0.post1
 cryptography==2.7
+cycler==0.10.0
 decorator==4.4.1
 defusedxml==0.6.0
 entrypoints==0.3
@@ -29,7 +31,9 @@ jupyter==1.0.0
 jupyter-client==5.3.4
 jupyter-console==5.2.0
 jupyter-core==4.6.3
+kiwisolver==1.1.0
 MarkupSafe==1.1.1
+matplotlib==2.2.5
 mistune==0.8.4
 mpi4py==3.0.1
 nbconvert==5.6.1
@@ -49,6 +53,7 @@ pycparser==2.19
 Pygments==2.5.2
 PyJWT==1.7.1
 pyOpenSSL==19.0.0
+pyparsing==2.4.6
 pyrsistent==0.15.7
 python-dateutil==2.8.1
 pytz==2019.2
@@ -56,11 +61,14 @@ pyzmq==18.1.1
 qtconsole==4.6.0
 requests==2.22.0
 scandir==1.10.0
+scikit-learn==0.20.4
+scipy==1.2.3
 Send2Trash==1.5.0
 simplegeneric==0.8.1
 singledispatch==3.4.0.3
 six==1.14.0
 stevedore==1.31.0
+subprocess32==3.5.4
 terminado==0.8.3
 testpath==0.4.4
 tornado==5.1.1
