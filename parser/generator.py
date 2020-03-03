@@ -50,7 +50,7 @@ with open(output_file, 'w') as f:
         'x8', 'y8', 'z8',
         'x8', 'y9', 'z9',
         'x10', 'y10', 'z10',
-        'm1', 'm2', 'm3', 'm4', 'm5', 'mtot'
+        'm1', 'm2', 'm3', 'm4', 'm5', 'mtot',
         'fermi', 'band', 'toten',
         'class'])
     for row in data:
