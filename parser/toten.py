@@ -21,4 +21,3 @@ for line in reversed(open(outcar).readlines()):
         break
 with open(output, 'w') as f:
     f.write(toten[4])
-    f.write('\n')
