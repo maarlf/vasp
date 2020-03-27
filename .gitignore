@@ -2,3 +2,4 @@ vpn/
 venv/
 .vscode/
 *.pdf
+datasets/potcar
