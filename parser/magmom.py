@@ -1,5 +1,5 @@
 """magmom.py
-This scripts are created to extract atoms position
+This scripts are created to extract magnetic moments
 from OUTCAR file from VASP calculation.
 
 Examples of information that we need to extract:
