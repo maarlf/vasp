@@ -46,7 +46,7 @@ magmoms = []
 energies = []
 toten = []
 
-dataset_dir = 'datasets/vasp/' + materials
+dataset_dir = 'datasets/' + materials
 
 with open(dataset_dir + '/POS') as f:
     for line in f:
@@ -67,7 +67,7 @@ with open(dataset_dir + '/TOTEN') as f:
 label = 10 if magmoms[-1] <= 2.5 else 1
 
 with open(output_csv) as f:
-	writer = csv.writer(f)
+    writer = csv.writer(f)
     writer.writerow([
         'x1', 'y1', 'z1',
         'x2', 'y2', 'z2',
@@ -77,9 +77,10 @@ with open(output_csv) as f:
         'x6', 'y6', 'z6',
         'x7', 'y7', 'z7',
         'x8', 'y8', 'z8',
-        'x8', 'y9', 'z9',
+        'x9', 'y9', 'z9',
         'x10', 'y10', 'z10',
         'm1', 'm2', 'm3', 'm4', 'm5', 'mtot',
         'fermi', 'band', 'toten',
-        'class'])
+        'class'
+    ])
     writer.writerow(row)
