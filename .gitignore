@@ -1,5 +1,6 @@
 vpn/
 venv/
 .vscode/
+simulations/
 *.pdf
 datasets/potcar
