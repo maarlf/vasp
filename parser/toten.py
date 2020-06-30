@@ -12,12 +12,12 @@ Output that we need:
 import sys
 import re
 
-outcar = sys.argv[1]
-output = sys.argv[2]
-toten = []
-for line in reversed(open(outcar).readlines()):
-    if line.startswith('  free  energy   TOTEN'):
-        toten = line.split()
-        break
-with open(output, 'w') as f:
-    f.write(toten[4])
+
+def toten(outcar, output):
+  tt = []
+  for line in reversed(open(outcar).readlines()):
+      if line.startswith('  free  energy   TOTEN'):
+          tt = line.split()
+          break
+  with open(output, 'w') as f:
+      f.write(tt[4])

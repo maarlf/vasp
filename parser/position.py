@@ -21,25 +21,25 @@ Output that we need:
 """
 import sys
 
-outcar = sys.argv[1]
-output = sys.argv[2]
-pos = []
-separator = ' -----------------------------------------------------------------------------------\n'
-read = False
-for line in reversed(open(outcar).readlines()):
-    if line.startswith('    total drift:'):
-        read = True
-        continue
-    if read:
-        if line.startswith(' POSITION'):
-            read = False
-            break
-        else:
-            pos.append(line.split())
-pos = pos[1:-1]
-for i in range(0, len(pos)):
-    pos[i] = [float(pos[i][j]) for j in range(0, 3)]
-with open(output, 'w') as f:
-    for p in reversed(pos):
-        f.write(' '.join(str(x) for x in p))
-        f.write('\n')
+
+def position(outcar, output):
+    pos = []
+    separator = ' -----------------------------------------------------------------------------------\n'
+    read = False
+    for line in reversed(open(outcar).readlines()):
+        if line.startswith('    total drift:'):
+            read = True
+            continue
+        if read:
+            if line.startswith(' POSITION'):
+                read = False
+                break
+            else:
+                pos.append(line.split())
+    pos = pos[1:-1]
+    for i in range(0, len(pos)):
+        pos[i] = [float(pos[i][j]) for j in range(0, 3)]
+    with open(output, 'w') as f:
+        for p in reversed(pos):
+            f.write(' '.join(str(x) for x in p))
+            f.write('\n')

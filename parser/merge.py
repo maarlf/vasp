@@ -38,35 +38,39 @@ Usage:
 import sys
 import csv
 
-dataset_dir = sys.argv[1]
-output = sys.argv[2]
 
-positions = []
-magmoms = []
-energies = []
-toten = []
+def merge(structures):
+    positions = []
+    magmoms = []
+    energies = []
+    toten = []
+    nelectrons = []
 
-with open(dataset_dir + '/POS') as f:
-    for line in f:
-        for l in line.split(' '):
-            positions.append(l.rstrip())
+    with open('POS') as f:
+        for line in f:
+            for l in line.split(' '):
+                positions.append(l.rstrip())
 
-with open(dataset_dir + '/MAGMOM') as f:
-    for line in f:
-        magmoms.append(line.rstrip())
+    with open('MAGMOM') as f:
+        for line in f:
+            magmoms.append(line.rstrip())
 
-with open(dataset_dir + '/ENERGY') as f:
-    for line in f:
-        energies.append(line.rstrip())
+    with open('ENERGY') as f:
+        for line in f:
+            energies.append(line.rstrip())
 
-with open(dataset_dir + '/TOTEN') as f:
-    for line in f:
-        toten.append(line)
+    with open('TOTEN') as f:
+        for line in f:
+            toten.append(line)
 
-label = 0 if magmoms[-1] <= 2.5 else 1
+    with open('NELECTRONS') as f:
+        for line in f:
+            nelectrons.append(line)
 
-row = positions + magmoms + energies + toten + [label]
+    label = 0 if magmoms[-1] <= 2.5 else 1
 
-with open(output, 'w') as f:
-    writer = csv.writer(f)
-    writer.writerow(row)
+    row = [structures] + positions + magmoms + energies + toten + nelectrons + [label]
+
+    with open('DATA', 'w') as f:
+        writer = csv.writer(f)
+        writer.writerow(row)

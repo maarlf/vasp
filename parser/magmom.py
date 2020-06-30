@@ -43,29 +43,28 @@ Output that we need:
 """
 import sys
 
-outcar = sys.argv[1]
-output = sys.argv[2]
-tots = []
-separator = '--------------------------------------------------\n'
-read = False
-with open(outcar, 'r') as f:
-    for line in f:
-        if line.startswith(' magnetization (x)'):
+
+def magmom(outcar, output):
+    tots = []
+    separator = '--------------------------------------------------\n'
+    top = '------------------------------------------\n'
+    read = False
+    for line in reversed(open(outcar).readlines()):
+        if line.startswith('tot'):
+            tots.append(line.split())
             read = True
-            f.next()
         if read:
-            if line == separator:
-                continue
-            if line.startswith('tot'):
-                tots.append(line.split())
+            if line == top:
                 read = False
                 break
+            elif line == separator:
+                continue
             else:
                 tots.append(line.split())
-tots = tots[3:]
-for i in range(0, len(tots)):
-    tots[i] = float(tots[i][-1])
-with open(output, 'w') as f:
-    for t in tots:
-        f.write(''.join(str(t)))
-        f.write('\n')
+    tots = tots[1:-1]
+    for i in range(0, len(tots)):
+        tots[i] = float(tots[i][4])
+    with open(output, 'w') as f:
+        for t in reversed(tots):
+            f.write(''.join(str(t)))
+            f.write('\n')
