@@ -3,4 +3,5 @@ venv/
 .vscode/
 simulations/
 *.pdf
+*.pyc
 datasets/potcar
