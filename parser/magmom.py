@@ -63,6 +63,7 @@ def magmom(outcar, output):
                 tots.append(line.split())
     for i in range(0, len(tots)):
         tots[i] = float(tots[i][4])
+    tots.pop(0)
     with open(output, 'w') as f:
         for t in reversed(tots):
             f.write(''.join(str(t)))
