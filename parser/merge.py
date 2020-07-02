@@ -67,7 +67,7 @@ def merge(structures):
         for line in f:
             nelectrons.append(line)
 
-    label = 0 if magmoms[-1] <= 2.5 else 1
+    label = 0 if float(magmoms[-1]) <= 2.5 else 1
 
     row = [structures] + positions + magmoms + energies + toten + nelectrons + [label]
 
