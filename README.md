@@ -2,7 +2,7 @@
 Parse VASP OUTCAR file informations to CSV.
 
 ## Usage
-Run `parser/cmd.py <structure name>` on structure directory that contains OUTCAR from VASP calculation. 
+Run `$ python parser/cmd.py <structure name>` on structure directory that contains OUTCAR from VASP calculation. 
 
 You'll have atom positions, magnetic moments, energies, and number of electrons on `DATA` file.
 
