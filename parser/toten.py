@@ -1,5 +1,5 @@
 """energy.py
-This will extract free energy from OUTCAR file from VASP calculation.
+This will extract total free energy from OUTCAR file from VASP calculation.
 
 Examples of information that we need to extract:
   FREE ENERGIE OF THE ION-ELECTRON SYSTEM (eV)

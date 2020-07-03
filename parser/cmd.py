@@ -1,7 +1,9 @@
+"""energy.py
+This script will be used as centralized parser, will extract few informatios from OUTCAR
+"""
+
 import os
 import sys
-
-# Parser libraries
 import position as p
 import magmom as m
 import energy as e
@@ -10,7 +12,6 @@ import nelectrons as n
 import merge as me
 
 
-# Run it all to create one file
 outcar = 'OUTCAR'
 structures = sys.argv[1]
 

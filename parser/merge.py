@@ -1,39 +1,6 @@
 """merge.py
-This script will generate new csv file from generated
-dataset e.g (POS, MAGMOM, ENERGY, TOTEN) and its labels
-
-Examples of information that we need:
-POS
-0.0 0.0 0.0
-0.0 1.765 1.765
-0.0 0.0 3.53
-0.0 1.765 5.30196
-0.0 0.0 6.98746
-
-MAGMOM
-0.688
-0.583
-0.583
-0.577
-0.677
-3.108
-
-ENERGY
--0.055695
--106.620542
-
-TOTEN
--25.570707
-
-CLASS
-
-Output that we need:
-One csv file containing all of these informations
-
-atom positions, magnetic moments, magnetic moment total, band, fermi, toten, class
-
-Usage:
-./parser/datasets.py <materials> datasets/vasp/<materials>/<materials>.csv
+This script will generate a line of merged information of atom positions,
+magnetic moments, total free energy, fermi and band energy, number of electrons
 """
 import sys
 import csv

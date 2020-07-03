@@ -1,5 +1,5 @@
 """position.py
-This scripts will atoms position from OUTCAR file from VASP calculation.
+This scripts will extract atoms position from OUTCAR file from VASP calculation.
 
 Examples of information that we need to extract from Ni100_Clean_rel:
  POSITION                                       TOTAL-FORCE (eV/Angst)

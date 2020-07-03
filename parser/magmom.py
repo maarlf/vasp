@@ -1,20 +1,7 @@
 """magmom.py
-This scripts are created to extract magnetic moments
-from OUTCAR file from VASP calculation.
+This scripts are created to extract magnetic moments from OUTCAR file from VASP calculation.
 
 Examples of information that we need to extract:
- magnetization (x)
- 
-# of ion     s       p       d       tot
-----------------------------------------
-  1       -0.003  -0.019   0.710   0.688
-  2       -0.008  -0.023   0.614   0.583
-  3       -0.007  -0.024   0.614   0.583
-  4       -0.008  -0.023   0.608   0.577
-  5       -0.004  -0.019   0.700   0.677
-------------------------------------------------
-tot       -0.029  -0.108   3.245   3.108
-
 
  magnetization (x)
 
@@ -34,12 +21,16 @@ tot       -0.029  -0.108   3.245   3.108
 tot          0.084  -0.254   5.869   5.699
 
 Output that we need:
-0.688
-0.583
-0.583
-0.577
-0.677
-3.108
+3.018
+3.018
+0.050
+-0.077
+-0.069
+-0.073
+-0.077
+-0.069
+-0.073
+5.699
 """
 import sys
 
