@@ -26,6 +26,8 @@ if __name__ == '__main__':
     X_test = df_test.drop(['structure', 'class'], axis=1)
     y_test = df_test['class'].values
 
+    structures = df_test['structure'].to_list()
+
     print()
     print('Done: datatrain.csv, datatest.csv')
 
@@ -57,3 +59,18 @@ if __name__ == '__main__':
     print('SVM Accuracy with best params: {}%'.format(accuracy_score(y_pred, y_test) * 100))
     print('Actual test label:    {}'.format(y_test))
     print('Predicted test label: {}'.format(y_pred))
+
+    # Outputing result
+    print()
+    print('==== Writing result to CSV ====')
+    print()
+
+    result = {
+        'structures': structures,
+        'class': y_pred
+    }
+
+    df_result = pd.DataFrame(result)
+    df_result.to_csv('output.csv', index=False)
+
+    print('Done writing result to output.csv')
