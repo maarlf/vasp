@@ -12,14 +12,13 @@ import nelectrons as n
 import merge as me
 
 
-outcar = 'OUTCAR'
-structures = sys.argv[1]
+outcar = sys.argv[1]
 
 p.position(outcar, 'POS')
 m.magmom(outcar, 'MAGMOM')
 e.energy(outcar, 'ENERGY')
 t.toten(outcar, 'TOTEN')
 n.nelectrons(outcar, 'NELECTRONS')
-me.merge(structures)
+me.merge(outcar)
 
 os.system('cat DATA')
